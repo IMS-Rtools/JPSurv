@@ -318,6 +318,15 @@ plot.dying.year.annotate<-function(plotdata,fit,nJP,yearvar,obsintvar="Relative_
       theme(legend.title=element_blank())+
       theme(plot.title = element_text(hjust = 0.5))
   }
+  
+  if(!annotation %in% c(0,1)){
+    print("The annontation indicator should be either 0 or 1.")
+    break
+  }
+  if(!topanno %in% c(0,1)){
+    print("The annontation indicator for the top curve only should be either 0 or 1.")
+    break
+  }
   return(plot)
 }
 
@@ -528,6 +537,10 @@ plot.surv.year.annotate<-function(plotdata,fit,nJP,yearvar,obscumvar="Relative_S
       theme(legend.position="bottom")+
       theme(legend.title=element_blank())+
       theme(plot.title = element_text(hjust = 0.5))
+  }
+  if(!annotation %in% c(0,1)){
+    print("The annontation indicator should be either 0 or 1.")
+    break
   }
   return(plot)
 }
